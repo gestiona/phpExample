@@ -28,7 +28,7 @@
 	 * Crea el token con el que tendremos que loguearnos para obtener la autorización.
 	 */
 	function createToken ($recursos, $addon) {
-		$curl = curl_init($recursos->links[10]->href);
+		$curl = curl_init($recursos->links[11]->href);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_HEADER, true);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -61,7 +61,7 @@
 	 * loguear con un usuario y contraseña para autorizar ese token.
 	 */
 	function comprobarToken ($recursos, $addon, $token) {
-		$curl = curl_init($recursos->links[10]->href . '/' . urlencode($token));
+		$curl = curl_init($recursos->links[11]->href . '/' . urlencode($token));
 		curl_setopt($curl, CURLOPT_POST, false);
 		curl_setopt($curl, CURLOPT_HEADER, true);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -223,7 +223,7 @@
 	 * fichero posteriormente.
 	 */
 	function crearUpload ($accessToken, $recursos) {
-		$curl = curl_init($recursos->links[11]->href);
+		$curl = curl_init($recursos->links[13]->href);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_HEADER, true);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
